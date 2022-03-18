@@ -1,5 +1,6 @@
 import HomeFooter from './home-footer/HomeFooter.jsx'
 import logo from '../assets/logo-pequeno.png'
+import CardContainer from './cards/CardContainer.jsx'
 
 const Home = () =>
     <main className="home">
@@ -7,7 +8,7 @@ const Home = () =>
             <img src={logo} alt="home logo" />
             <h1>ZapRecall</h1>
         </div>
-        
+        <CardContainer/>
         <HomeFooter/>
     </main>
 

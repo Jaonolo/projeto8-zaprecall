@@ -48,7 +48,7 @@ main {
     padding-top: 20px;
 }
 
-.home div {
+.home > div {
     display: flex;
     gap: 12px
 }
@@ -80,14 +80,44 @@ main {
 
 .flashcard {
     width: 328px;
-    height: 72px;
     font-size: 21px;
     border-radius: 9px;
-    background-color: white;
+    padding: 0
 }
 
 .front {
+    background-color: white;
+    height: 72px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.question {
+    background-color: #FFFFD4;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.question div {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.answer {
+    background-color: #FFFFD4;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+}
+
+.answer div {
+    width: 100%;
+    display: flex;
+}
+
+.answer button {
+    flex-grow: 1
 }

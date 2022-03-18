@@ -1,6 +1,12 @@
 :root {
+    box-sizing: border-box;
+
     --primary-color: #FB6B6B;
     --secondary-color: #D70900;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
 }
 
 main {

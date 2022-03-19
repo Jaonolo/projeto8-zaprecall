@@ -85,12 +85,21 @@ main {
     padding: 0
 }
 
+.flashcard section {
+    border-radius: 9px;
+}
+
 .front {
     background-color: white;
     height: 72px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px 0 10px
+}
+
+.front ion-icon {
+    font-size: 28px
 }
 
 .question {
@@ -99,11 +108,13 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding: 26px 13px 13px 13px
 }
 
 .question div {
     flex-grow: 1;
     width: 100%;
+    text-align: left;
 }
 
 .answer {
@@ -111,13 +122,43 @@ main {
     height: 144px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 26px 13px 6px 13px;
+    text-align: left;
 }
 
 .answer div {
     width: 100%;
     display: flex;
+    gap: 5px
 }
 
 .answer button {
-    flex-grow: 1
+    flex-grow: 1;
+    min-height: 44px;
+    word-break: break-all;
+}
+
+.fail {
+    background-color: #FF3030
+}
+
+.almost {
+    background-color: #FF922E
+}
+
+.success {
+    background-color: #2FBE34
+}
+
+.front .fail {
+    color: #FF3030
+}
+
+.front .almost {
+    color: #FF922E
+}
+
+.front .success {
+    color: #2FBE34
 }

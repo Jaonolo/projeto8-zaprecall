@@ -4,6 +4,12 @@ const Flashcard = ({control, data, index}) => {
     const [currentFace, setFace] = useState('front')
     const [cardStatus, setStatus] = control
 
+    const icons = {
+        fail: "close-circle",
+        almost: "help-circle",
+        success: "checkmark-circle",
+    }
+
     const startCard = () => {
         if(['fail', 'almost', 'success'].includes(cardStatus[index]))
             return 0
@@ -24,7 +30,7 @@ const Flashcard = ({control, data, index}) => {
         front:
             <section className="front">
                 Pergunta {index + 1}
-                <ion-icon onClick={startCard} name="play-outline"></ion-icon>
+                <ion-icon className={cardStatus[index]}  onClick={startCard} name={icons[cardStatus[index]] || "play-outline"}></ion-icon>
             </section>,
 
         question: 
@@ -37,17 +43,17 @@ const Flashcard = ({control, data, index}) => {
             <section className="answer">
                 {data.answer}
                 <div>
-                    <button onClick={() => finishCard('fail')}>oi</button>
-                    <button onClick={() => finishCard('almost')}>oi</button>
-                    <button onClick={() => finishCard('success')}>oi</button>
+                    <button className="fail" onClick={() => finishCard('fail')}>Não Lembrei</button>
+                    <button className="almost" onClick={() => finishCard('almost')}>Quase Não Lembrei</button>
+                    <button className="success" onClick={() => finishCard('success')}>Zap!</button>
                 </div>
             </section>
     }
 
     return(
-        <button className="flashcard">
+        <div className="flashcard">
             {faces[currentFace]}
-        </button>
+        </div>
     )
 }
 

@@ -24,7 +24,7 @@ main {
 
 .welcome {
     justify-content: center;
-    gap: 132px;
+    gap: 36px;
     text-align: center;
 }
 
@@ -45,8 +45,22 @@ main {
     align-items: center;
 }
 
+.welcome select {
+    width: 246px;
+    height: 36px;
+}
+
+.welcome input {
+    width: 246px;
+    height: 36px;
+}
+
+.welcome-control {
+    gap: 18px
+}
+
 .start-button {
-    width: 252px;
+    width: 246px;
     height: 54px;
     background-color: white;
     border-radius: 9px;
@@ -102,8 +116,12 @@ main {
 .card-container {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 25px;
     margin-top: 68px;
+    overflow: auto;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 170px
 }
 
 .flashcard {

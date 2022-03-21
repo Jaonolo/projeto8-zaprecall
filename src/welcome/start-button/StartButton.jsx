@@ -1,5 +1,4 @@
-const StartButton = ({setPage}) => {
-    const startApp = () => setPage('home')
+const StartButton = ({startApp}) => {
 
     return <button className="start-button" onClick={startApp}>
         Iniciar Recall!

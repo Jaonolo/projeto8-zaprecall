@@ -16,7 +16,7 @@ const Home = ({options}) => {
             <h1>ZapRecall</h1>
         </div>
         <CardContainer questions={questions} control={[cardStatus, setStatus]}/>
-        <HomeFooter total={questions.length} current={cardStatus}>
+        <HomeFooter goal={goal} total={questions.length} current={cardStatus}>
             <button onClick={restartQuizz}>Reiniciar Quizz</button>
         </HomeFooter>
     </main>

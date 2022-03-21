@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 const Flashcard = ({control, data, index}) => {
     const [currentFace, setFace] = useState('front')

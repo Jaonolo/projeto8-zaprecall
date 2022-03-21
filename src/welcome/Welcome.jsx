@@ -11,12 +11,18 @@ const Welcome = ({control, setPage}) => {
             <img src={logo} alt="main logo" />
             <h1>ZapRecall</h1>
         </div>
-        <div>
-            <input onChange={({target}) => setOptions({...options, goal: target.value})} type='text'></input>
-            <select onChange={({target}) => setOptions({...options, deck: target.value})} name="" id="">
-                {Object.keys(decks).map(e => <option value={e}>{e}</option>)}    
+        <div className="welcome-control">
+            <input placeholder='Escolha sua meta de zaps (padrão: 1)' onChange={({target}) => setOptions({...options, goal: target.value})} type='text'></input>
+            <select onChange={({target}) => setOptions({...options, deck: decks[target.value]})} name="" id="">
+                {Object.keys(decks).map((e, i) => <option key={`option-${i}`} value={e}>{e}</option>)}    
             </select>
-            <StartButton setPage={setPage} />
+            <StartButton startApp={() => {
+                if(options.goal > options.deck.length || options.goal < 1) {
+                    alert('Preencha os dados corretamente')
+                    return
+                }
+                setPage('home')
+            }} />
         </div>
     </main>
 }

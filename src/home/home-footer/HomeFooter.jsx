@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const HomeFooter = ({current, total, children}) => {
+const HomeFooter = ({goal, current, total, children}) => {
     const [footerState, setFooter] = useState([[], new Array(total).fill('')])
     const [doneDisplay, lastList] = footerState   
 
@@ -10,7 +10,7 @@ const HomeFooter = ({current, total, children}) => {
         success: "checkmark-circle",
     }
 
-    const message = () => currentCount.filter(e => e === 'fail').length > 0 ?
+    const message = () => currentCount.filter(e => e === 'success').length < goal ?
         {emoji: '', title: 'Putz...', body: 'Ainda faltam alguns... Mas não desanime!'} :
         {emoji: '', title: 'Parabéns!', body: 'Você não esqueceu de nenhum flashcard!'}
         
@@ -40,7 +40,7 @@ const HomeFooter = ({current, total, children}) => {
         <Finish>
             {currentCount.length}/{total} CONCLUÍDOS
             <div>
-                {doneDisplay.map(e => <ion-icon class={e} name={icons[e]}/>)}
+                {doneDisplay.map((e, i) => <ion-icon key={`icon-${i}`} class={e} name={icons[e]}/>)}
             </div>
         </Finish>
     </footer>

@@ -3,12 +3,11 @@ import { useState } from "react";
 import Welcome from "./welcome/Welcome.jsx"
 import Home from "./home/home.jsx";
 
+import decks from './data'
+
 const App = () => {
     const [currentPage, setPage] = useState('welcome')
-    const [options, setOptions] = useState({
-        deck: [{question: 'a', answer: 'b'}, 'b', 'c'],
-        goal: 3
-    })
+    const [options, setOptions] = useState({goal: 1, deck: decks['test']})
 
     const Pages = {
         welcome: <Welcome control={[options, setOptions]} setPage={setPage}/>,

@@ -27,8 +27,7 @@ const Flashcard = ({control, data, index}) => {
         front:
             <section className={cardStatus[index] + " front"}>
                 Pergunta {index + 1}
-                {/*<ion-icon class={cardStatus[index]} onClick={startCard} name={icons[cardStatus[index]] || "play-outline"} aria-label={(icons[cardStatus[index]] || "play-outline").split('-').join(' ')}></ion-icon>*/}
-                <button onClick={startCard}></button>
+                <ion-icon class={cardStatus[index]} onClick={startCard} name={icons[cardStatus[index]] || "play-outline"} aria-label={(icons[cardStatus[index]] || "play-outline").split('-').join(' ')}></ion-icon>
             </section>,
 
         question: 

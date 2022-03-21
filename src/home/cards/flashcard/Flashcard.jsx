@@ -30,7 +30,7 @@ const Flashcard = ({control, data, index}) => {
         front:
             <section className="front">
                 Pergunta {index + 1}
-                <ion-icon className={cardStatus[index]}  onClick={startCard} name={icons[cardStatus[index]] || "play-outline"}></ion-icon>
+                <ion-icon class={cardStatus[index]}  onClick={startCard} name={icons[cardStatus[index]] || "play-outline"}></ion-icon>
             </section>,
 
         question: 

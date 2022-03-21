@@ -22,7 +22,7 @@ const HomeFooter = ({current, total}) => {
     return <footer className="home-footer">
         {currentCount.length}/{total} CONCLUÍDOS
         <div>
-            {doneDisplay.map(e => <ion-icon name={icons[e]}/>)}
+            {doneDisplay.map(e => <ion-icon class={e} name={icons[e]}/>)}
         </div>
     </footer>   
 }

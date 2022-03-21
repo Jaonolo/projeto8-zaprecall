@@ -149,26 +149,26 @@ main {
     word-break: break-all;
 }
 
-.fail {
+button.fail {
     background-color: #FF3030
 }
 
-.almost {
+button.almost {
     background-color: #FF922E
 }
 
-.success {
+button.success {
     background-color: #2FBE34
 }
 
-.front .fail {
+ion-icon.fail {
     color: #FF3030
 }
 
-.front .almost {
+ion-icon.almost {
     color: #FF922E
 }
 
-.front .success {
+ion-icon.success {
     color: #2FBE34
 }

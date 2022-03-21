@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Flashcard = ({control, data, index}) => {
     const [currentFace, setFace] = useState('front')
@@ -14,9 +14,6 @@ const Flashcard = ({control, data, index}) => {
         if(['fail', 'almost', 'success'].includes(cardStatus[index]))
             return 0
         setFace('question')
-        const newStatus = [...cardStatus]
-        newStatus[index] = 'playing'
-        setStatus(newStatus)
     }
 
     const finishCard = score => {
@@ -28,9 +25,10 @@ const Flashcard = ({control, data, index}) => {
 
     const faces = {
         front:
-            <section className="front">
+            <section className={cardStatus[index] + " front"}>
                 Pergunta {index + 1}
-                <ion-icon class={cardStatus[index]}  onClick={startCard} name={icons[cardStatus[index]] || "play-outline"}></ion-icon>
+                {/*<ion-icon class={cardStatus[index]} onClick={startCard} name={icons[cardStatus[index]] || "play-outline"} aria-label={(icons[cardStatus[index]] || "play-outline").split('-').join(' ')}></ion-icon>*/}
+                <button onClick={startCard}></button>
             </section>,
 
         question: 

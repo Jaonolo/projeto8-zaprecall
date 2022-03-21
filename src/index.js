@@ -5,10 +5,14 @@ import Home from "./home/home.jsx";
 
 const App = () => {
     const [currentPage, setPage] = useState('welcome')
+    const [options, setOptions] = useState({
+        deck: [{question: 'a', answer: 'b'}, 'b', 'c'],
+        goal: 3
+    })
 
     const Pages = {
-        welcome: <Welcome setPage={setPage}/>,
-        home: <Home/>
+        welcome: <Welcome control={[options, setOptions]} setPage={setPage}/>,
+        home: <Home options={options}/>
     }
     
     return Pages[currentPage]
